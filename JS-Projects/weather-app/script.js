@@ -123,27 +123,27 @@ function GetDailyInfo() {
             //Getting Weather Icons
             for (i = 0; i < 8; i++) {
                 if (data.list[i].weather[0].description === "few clouds") {
-                    document.getElementById("img" + (i + 1)).src = "./animated/cloudy-day-1.svg"
+                    document.getElementById("img" + (i + 1)).src = "images/animated/cloudy-day-1.svg"
 
                 }
                 if (data.list[i].weather[0].description === "clear sky") {
-                    document.getElementById("img" + (i + 1)).src = "./animated/day.svg"
+                    document.getElementById("img" + (i + 1)).src = "images/animated/day.svg"
 
                 }
                 if (data.list[i].weather[0].description === "scattered clouds") {
-                    document.getElementById("img" + (i + 1)).src = "./animated/cloudy.svg"
+                    document.getElementById("img" + (i + 1)).src = "images/animated/cloudy.svg"
 
                 }
                 if (data.list[i].weather[0].description === "broken clouds") {
-                    document.getElementById("img" + (i + 1)).src = "./animated/cloudy-day-3.svg"
+                    document.getElementById("img" + (i + 1)).src = "images/animated/cloudy-day-3.svg"
 
                 }
                 if (data.list[i].weather[0].description === "overcast clouds") {
-                    document.getElementById("img" + (i + 1)).src = "./animated/cloudy.svg"
+                    document.getElementById("img" + (i + 1)).src = "images/animated/cloudy.svg"
 
                 }
                 if (data.list[0].weather[0].description === "light rain") {
-                    document.getElementById("img" + (i + 1)).src = "./animated/rainy-2.svg"
+                    document.getElementById("img" + (i + 1)).src = "images/animated/rainy-2.svg"
 
                 }
 
@@ -215,27 +215,27 @@ function CityDelhi() {
 
 
             if (data.list[0].weather[0].description === "few clouds") {
-                document.getElementById("img1").src = "./animated/cloudy-day-1.svg"
+                document.getElementById("img1").src = "images/animated/cloudy-day-1.svg"
 
             }
             if (data.list[0].weather[0].description === "clear sky") {
-                document.getElementById("img1").src = "./animated/day.svg"
+                document.getElementById("img1").src = "images/animated/day.svg"
 
             }
             if (data.list[0].weather[0].description === "scattered clouds") {
-                document.getElementById("img1").src = "./animated/cloudy.svg"
+                document.getElementById("img1").src = "images/animated/cloudy.svg"
 
             }
             if (data.list[0].weather[0].description === "broken clouds") {
-                document.getElementById("img1").src = "./animated/cloudy-day-3.svg"
+                document.getElementById("img1").src = "images/animated/cloudy-day-3.svg"
 
             }
             if (data.list[0].weather[0].description === "overcast clouds") {
-                document.getElementById("img1").src = "./animated/cloudy.svg"
+                document.getElementById("img1").src = "images/animated/cloudy.svg"
 
             }
             if (data.list[0].weather[0].description === "light rain") {
-                document.getElementById("img1").src = "./animated/rainy-2.svg"
+                document.getElementById("img1").src = "images/animated/rainy-2.svg"
 
             }
 
@@ -253,27 +253,27 @@ function CityMumbai() {
             document.getElementById("carddesc2").innerHTML = data.list[0].weather[0].description;
 
             if (data.list[0].weather[0].description === "few clouds") {
-                document.getElementById("img2").src = "./animated/cloudy-day-1.svg"
+                document.getElementById("img2").src = "images/animated/cloudy-day-1.svg"
 
             }
             if (data.list[0].weather[0].description === "clear sky") {
-                document.getElementById("img2").src = "./animated/day.svg"
+                document.getElementById("img2").src = "images/animated/day.svg"
 
             }
             if (data.list[0].weather[0].description === "scattered clouds") {
-                document.getElementById("img2").src = "./animated/cloudy.svg"
+                document.getElementById("img2").src = "images/animated/cloudy.svg"
 
             }
             if (data.list[0].weather[0].description === "broken clouds") {
-                document.getElementById("img2").src = "./animated/cloudy-day-3.svg"
+                document.getElementById("img2").src = "images/animated/cloudy-day-3.svg"
 
             }
             if (data.list[0].weather[0].description === "overcast clouds") {
-                document.getElementById("img2").src = "./animated/cloudy.svg"
+                document.getElementById("img2").src = "images/animated/cloudy.svg"
 
             }
             if (data.list[0].weather[0].description === "light rain") {
-                document.getElementById("img2").src = "./animated/rainy-2.svg"
+                document.getElementById("img2").src = "images/animated/rainy-2.svg"
 
             }
 
@@ -290,27 +290,27 @@ function CityChennai() {
             document.getElementById("carddesc3").innerHTML = data.list[0].weather[0].description;
 
             if (data.list[0].weather[0].description === "few clouds") {
-                document.getElementById("img3").src = "./animated/cloudy-day-1.svg"
+                document.getElementById("img3").src = "images/animated/cloudy-day-1.svg"
 
             }
             if (data.list[0].weather[0].description === "clear sky") {
-                document.getElementById("img3").src = "./animated/day.svg"
+                document.getElementById("img3").src = "images/animated/day.svg"
 
             }
             if (data.list[0].weather[0].description === "scattered clouds") {
-                document.getElementById("img3").src = "./animated/cloudy.svg"
+                document.getElementById("img3").src = "images/animated/cloudy.svg"
 
             }
             if (data.list[0].weather[0].description === "broken clouds") {
-                document.getElementById("img3").src = "./animated/cloudy-day-3.svg"
+                document.getElementById("img3").src = "images/animated/cloudy-day-3.svg"
 
             }
             if (data.list[0].weather[0].description === "overcast clouds") {
-                document.getElementById("img3").src = "./animated/cloudy.svg"
+                document.getElementById("img3").src = "images/animated/cloudy.svg"
 
             }
             if (data.list[0].weather[0].description === "light rain") {
-                document.getElementById("img3").src = "./animated/rainy-2.svg"
+                document.getElementById("img3").src = "images/animated/rainy-2.svg"
 
             }
 
@@ -326,27 +326,27 @@ function CityJaipur() {
             document.getElementById("carddesc4").innerHTML = data.list[0].weather[0].description;
 
             if (data.list[0].weather[0].description === "few clouds") {
-                document.getElementById("img4").src = "./animated/cloudy-day-1.svg"
+                document.getElementById("img4").src = "images/animated/cloudy-day-1.svg"
 
             }
             if (data.list[0].weather[0].description === "clear sky") {
-                document.getElementById("img4").src = "./animated/day.svg"
+                document.getElementById("img4").src = "images/animated/day.svg"
 
             }
             if (data.list[0].weather[0].description === "scattered clouds") {
-                document.getElementById("img4").src = "./animated/cloudy.svg"
+                document.getElementById("img4").src = "images/animated/cloudy.svg"
 
             }
             if (data.list[0].weather[0].description === "broken clouds") {
-                document.getElementById("img4").src = "./animated/cloudy-day-3.svg"
+                document.getElementById("img4").src = "images/animated/cloudy-day-3.svg"
 
             }
             if (data.list[0].weather[0].description === "overcast clouds") {
-                document.getElementById("img4").src = "./animated/cloudy.svg"
+                document.getElementById("img4").src = "images/animated/cloudy.svg"
 
             }
             if (data.list[0].weather[0].description === "light rain") {
-                document.getElementById("img4").src = "./animated/rainy-2.svg"
+                document.getElementById("img4").src = "images/animated/rainy-2.svg"
 
             }
 
