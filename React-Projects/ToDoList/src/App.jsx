@@ -1,16 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { TodoWrapperLocalStorage } from './components/TodoWrapperLocalStorage';
+
 
 function App() {
-  
-
   return (
-    <>
-     
-    </>
-  )
+    <div className="App">
+    <TodoWrapperLocalStorage />
+    </div>
+  );
 }
 
-export default App
+export default App;
