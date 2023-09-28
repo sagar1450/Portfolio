@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="script.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/5778f81e55.js" crossorigin="anonymous"></script>
     <title>Weather-app</title>
 
@@ -21,6 +23,8 @@
 <body onload="GetCityInfo()">
 
     <!-- navigation bar -->
+
+    <div id="main">
 
     <nav class="navbar fixed-top navbar-expand-sm  navbar-light bg-light">
         <div class="container-fluid">
@@ -45,8 +49,8 @@
                 </ul>
             </div>
         </div>
-    </nav> 
-    
+    </nav>
+
 
     <!-- Search-bar -->
     <div class="wrapper">
@@ -76,7 +80,7 @@
             <div class="Card">
                 <p class="card-city" id="city2"></p>
                 <div class="imgcontainer">
-                  <img src="dots.png" class="imgClass" id="img2">
+                    <img src="dots.png" class="imgClass" id="img2">
                     <p class="card-temp" id="cityTemp2"></p>
                 </div>
                 <p class="card-desc" id="carddesc2"></p>
@@ -100,69 +104,69 @@
         </div>
 
     </div>
-    
-     
+
+
     <div id="news">
         <h4>Top Stories</h4>
         <div class="first-3">
-        <section class="section">
-            <div class="paras">
-                <p class="sectiontag text-big" id="newstitle1"></p>
-                <p id="newsdesc1"> </p>
+            <section class="section">
+                <div class="paras">
+                    <p class="sectiontag text-big" id="newstitle1"></p>
+                    <p id="newsdesc1"> </p>
                 </div>
                 <div class="thumbnail">
                     <img src="dots.png" id="newsimg1">
-                </div>    
-        </section>
-        <section class="section">
-            <div class="paras">
-                <p class="sectiontag text-big" id="newstitle2"></p>
-                <p id="newsdesc2"> </p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="paras">
+                    <p class="sectiontag text-big" id="newstitle2"></p>
+                    <p id="newsdesc2"> </p>
                 </div>
                 <div class="thumbnail">
                     <img src="dots.png" id="newsimg2">
-                </div>    
-        </section>
-        <section class="section">
-            <div class="paras">
-                <p class="sectiontag text-big" id="newstitle3"></p>
-                <p id="newsdesc3"> </p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="paras">
+                    <p class="sectiontag text-big" id="newstitle3"></p>
+                    <p id="newsdesc3"> </p>
                 </div>
                 <div class="thumbnail">
                     <img src="dots.png" id="newsimg3">
-                </div>    
-        </section>
-    </div>
-    <div class="last-3">
-        <section class="section">
-            <div class="paras">
-                <p class="sectiontag text-big" id="newstitle4"></p>
-                <p id="newsdesc4" class="sectionsubtag text-small"> </p>
+                </div>
+            </section>
+        </div>
+        <div class="last-3">
+            <section class="section">
+                <div class="paras">
+                    <p class="sectiontag text-big" id="newstitle4"></p>
+                    <p id="newsdesc4" class="sectionsubtag text-small"> </p>
                 </div>
                 <div class="thumbnail">
                     <img src="dots.png" id="newsimg4">
-                </div>    
-        </section>
-        <section class="section">
-            <div class="paras">
-                <p class="sectiontag text-big" id="newstitle5"></p>
-                <p id="newsdesc5"> </p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="paras">
+                    <p class="sectiontag text-big" id="newstitle5"></p>
+                    <p id="newsdesc5"> </p>
                 </div>
                 <div class="thumbnail">
                     <img src="dots.png" id="newsimg5">
-                </div>    
-        </section>
-        <section class="section">
-            <div class="paras">
-                <p class="sectiontag text-big" id="newstitle6"></p>
-                <p id="newsdesc6"> </p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="paras">
+                    <p class="sectiontag text-big" id="newstitle6"></p>
+                    <p id="newsdesc6"> </p>
                 </div>
                 <div class="thumbnail">
                     <img src="dots.png" id="newsimg6">
-                </div>    
-        </section>
+                </div>
+            </section>
         </div>
-    </div>  
+    </div>
 
 
 
@@ -178,6 +182,7 @@
         </div>
         <p class="end">CopyRight By Sagar Rathod</p>
     </footer>
+    </div>
 
 </body>
 

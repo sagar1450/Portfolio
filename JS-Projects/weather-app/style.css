@@ -6,10 +6,15 @@
 
 }
 
-html {
+html,body {
   scroll-behavior: smooth;
+  width:100%;
+  height: 100%;
 }
 
+#main{
+  overflow: hidden;
+}
 :root {
   --white: #ffffff;
   --off-white: #e5e5e5;
@@ -496,16 +501,7 @@ footer p:nth-child(2) {
 
 /* responsive */
 
-@media screen and (max-width: 1140px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-
-  /* *{
-  overflow-x: hidden;
-} */
+@media screen and (max-width: 1140px) {  
 
   .box-main {
     flex-direction: column-reverse;

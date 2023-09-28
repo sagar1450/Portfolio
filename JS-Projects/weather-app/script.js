@@ -1,3 +1,8 @@
+    // const scroll = new LocomotiveScroll({
+    //     el: document.querySelector('#main'),
+    //     smooth: true
+    // });
+
 const d = new Date();
 const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
 const newName = document.getElementById("city");
@@ -10,17 +15,17 @@ const News = document.getElementById('news')
 
 function GetInfo(city) {
 
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=32ba0bfed592484379e51106cef3f204')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=1db0432893cd598b88ba646e9719415b')
         .then(response => response.json())
         .then(data => {
             console.log(data)
             result.innerHTML = `
-     <div class="right">
+    <div class="right">
     <h3>${city}</h3>
     <div class="right-child">
     <img src=http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}.png class="img">    
-    <h2>${(data.list[0].main.temp - 273.15).toFixed(1)}&#176;</h2>   
-    <h4> Feels-like: ${(data.list[0].main.feels_like - 273.15).toFixed(1)}&#176;</h4>  
+    <h2>${(data.list[0].main.temp - 273.15).toFixed(1)}°c</h2>   
+    <h4> Feels-like: ${(data.list[0].main.feels_like - 273.15).toFixed(1)}°c</h4>  
     </div>
     </div>
     <div class="table">
@@ -41,11 +46,11 @@ function GetInfo(city) {
     <table class="table2">
     <tr>
     <td>Min-Temp</td>
-    <td>${(data.list[0].main.temp_min - 273.15).toFixed(1)}&#176;</td>
+    <td>${(data.list[0].main.temp_min - 273.15).toFixed(1)}°c</td>
     </tr>
     <tr>
     <td>Max-temp</td>
-    <td>${(data.list[0].main.temp_max - 273.15).toFixed(1)}&#176;</td>
+    <td>${(data.list[0].main.temp_max - 273.15).toFixed(1)}°c</td>
     </tr>
     <tr>
     <td>Weather</td>
@@ -55,9 +60,9 @@ function GetInfo(city) {
     </div>       
     ` ;
 
-            currentTemp.innerHTML = `${(data.list[0].main.temp - 273.15).toFixed(1)}°`
+            currentTemp.innerHTML = `${(data.list[0].main.temp - 273.15).toFixed(1)}°c`
             currentTemp.innerHTML += ` ${data.city.name}`
-           
+
 
         })
 
@@ -84,10 +89,10 @@ fetch('https://newsapi.org/v2/top-headlines?country=in&apiKey=2edd63edce85439fa6
         }
 
         for (let i = 0; i < 6; i++) {
-            document.getElementById("newstitle" + (i + 1)).addEventListener("click", e => {              
-                window.open(`${data.articles[i].url}`,"_blank")               
+            document.getElementById("newstitle" + (i + 1)).addEventListener("click", e => {
+                window.open(`${data.articles[i].url}`, "_blank")
             })
-        
+
         }
 
     })
@@ -97,12 +102,12 @@ fetch('https://newsapi.org/v2/top-headlines?country=in&apiKey=2edd63edce85439fa6
 
 function GetDailyInfo() {
 
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=32ba0bfed592484379e51106cef3f204')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=1db0432893cd598b88ba646e9719415b')
         .then(response => response.json())
         .then(data => {
 
             for (i = 0; i < 8; i++) {
-                document.getElementById("day" + (i + 1) + "Wind").innerHTML = (data.list[i].main.temp - 273.15).toFixed(1) + "°";
+                document.getElementById("day" + (i + 1) + "Wind").innerHTML = (data.list[i].main.temp - 273.15).toFixed(1) + "°c";
                 //Number(1.3450001).toFixed(2); // 1.35
             }
 
@@ -112,12 +117,12 @@ function GetDailyInfo() {
             }
 
             for (i = 0; i < 8; i++) {
-                document.getElementById("day" + (i + 1) + "Min").innerHTML = "Min: " + Number(data.list[i].main.temp_min - 273.15).toFixed(1) + "°";
+                document.getElementById("day" + (i + 1) + "Min").innerHTML = "Min: " + Number(data.list[i].main.temp_min - 273.15).toFixed(1) + "°c";
                 //Number(1.3450001).toFixed(2); // 1.35
             }
 
             for (i = 0; i < 8; i++) {
-                document.getElementById("day" + (i + 1) + "Max").innerHTML = "Max: " + Number(data.list[i].main.temp_max - 273.15).toFixed(2) + "°";
+                document.getElementById("day" + (i + 1) + "Max").innerHTML = "Max: " + Number(data.list[i].main.temp_max - 273.15).toFixed(2) + "°c";
             }
 
             //Getting Weather Icons
@@ -142,7 +147,7 @@ function GetDailyInfo() {
                     document.getElementById("img" + (i + 1)).src = "images/animated/cloudy.svg"
 
                 }
-                if (data.list[0].weather[0].description === "light rain") {
+                if (data.list[i].weather[0].description === "light rain") {
                     document.getElementById("img" + (i + 1)).src = "images/animated/rainy-2.svg"
 
                 }
@@ -206,11 +211,11 @@ function GetCityInfo() {
 }
 
 function CityDelhi() {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Delhi&appid=32ba0bfed592484379e51106cef3f204')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Delhi&appid=1db0432893cd598b88ba646e9719415b')
         .then(response => response.json())
         .then(data => {
             document.getElementById("city1").innerHTML = data.city.name;
-            document.getElementById("cityTemp1").innerHTML = (data.list[0].main.temp - 273.15).toFixed(1) + "°";
+            document.getElementById("cityTemp1").innerHTML = (data.list[0].main.temp - 273.15).toFixed(1) + "°c";
             document.getElementById("carddesc1").innerHTML = data.list[0].weather[0].description;
 
 
@@ -245,11 +250,11 @@ function CityDelhi() {
 }
 
 function CityMumbai() {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Mumbai&appid=32ba0bfed592484379e51106cef3f204')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Mumbai&appid=1db0432893cd598b88ba646e9719415b')
         .then(response => response.json())
         .then(data => {
             document.getElementById("city2").innerHTML = data.city.name;
-            document.getElementById("cityTemp2").innerHTML = (data.list[0].main.temp - 273.15).toFixed(1) + "°";
+            document.getElementById("cityTemp2").innerHTML = (data.list[0].main.temp - 273.15).toFixed(1) + "°c";
             document.getElementById("carddesc2").innerHTML = data.list[0].weather[0].description;
 
             if (data.list[0].weather[0].description === "few clouds") {
@@ -281,12 +286,12 @@ function CityMumbai() {
 }
 
 function CityChennai() {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Chennai&appid=32ba0bfed592484379e51106cef3f204')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Chennai&appid=1db0432893cd598b88ba646e9719415b')
         .then(response => response.json())
         .then(data => {
 
             document.getElementById("city3").innerHTML = data.city.name;
-            document.getElementById("cityTemp3").innerHTML = (data.list[0].main.temp - 273.15).toFixed(1) + "°";
+            document.getElementById("cityTemp3").innerHTML = (data.list[0].main.temp - 273.15).toFixed(1) + "°c";
             document.getElementById("carddesc3").innerHTML = data.list[0].weather[0].description;
 
             if (data.list[0].weather[0].description === "few clouds") {
@@ -318,11 +323,11 @@ function CityChennai() {
 }
 
 function CityJaipur() {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Jaipur&appid=32ba0bfed592484379e51106cef3f204')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Jaipur&appid=1db0432893cd598b88ba646e9719415b')
         .then(response => response.json())
         .then(data => {
             document.getElementById("city4").innerHTML = data.city.name;
-            document.getElementById("cityTemp4").innerHTML = (data.list[0].main.temp - 273.15).toFixed(1) + "°";
+            document.getElementById("cityTemp4").innerHTML = (data.list[0].main.temp - 273.15).toFixed(1) + "°c";
             document.getElementById("carddesc4").innerHTML = data.list[0].weather[0].description;
 
             if (data.list[0].weather[0].description === "few clouds") {
@@ -357,7 +362,7 @@ function CityJaipur() {
 //function for temperature,wind and humidity
 function getWind() {
 
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=32ba0bfed592484379e51106cef3f204')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=1db0432893cd598b88ba646e9719415b')
         .then(response => response.json())
         .then(data => {
             console.log(data)
@@ -377,7 +382,7 @@ function getWind() {
 }
 
 function getHumidity() {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=32ba0bfed592484379e51106cef3f204')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=1db0432893cd598b88ba646e9719415b')
         .then(response => response.json())
         .then(data => {
             console.log(data)
@@ -397,13 +402,13 @@ function getHumidity() {
 
 function getTemp() {
 
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=32ba0bfed592484379e51106cef3f204')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=1db0432893cd598b88ba646e9719415b')
         .then(response => response.json())
         .then(data => {
             console.log(data)
 
             for (i = 0; i < 8; i++) {
-                document.getElementById("day" + (i + 1) + "Wind").innerHTML = (data.list[i].main.temp - 273.15).toFixed(1) + "°";
+                document.getElementById("day" + (i + 1) + "Wind").innerHTML = (data.list[i].main.temp - 273.15).toFixed(1) + "°c";
             }
         })
 
