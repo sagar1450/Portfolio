@@ -13,8 +13,8 @@ export const TodoWrapperLocalStorage = () => {
         setTodos(savedTodos);
     }, []);
 
-    const addTodo = todo => {
-        const newTodos = [...todos, {id: uuidv4(), task: todo, completed: false, isEditing: false}];
+    const addTodo = todo => {       
+        const newTodos = [...todos, {id: uuidv4(), task: todo, completed: false, isEditing: false}];       
         setTodos(newTodos);
         localStorage.setItem('todos', JSON.stringify(newTodos));
     }
@@ -28,6 +28,7 @@ export const TodoWrapperLocalStorage = () => {
 
     const editTodo = id => {
         setTodos(todos.map(todo => todo.id === id ? {...todo, isEditing: !todo.isEditing} : todo))
+       
     }
 
     const editTask = (task, id) => {
@@ -39,11 +40,11 @@ export const TodoWrapperLocalStorage = () => {
     <div className='TodoWrapper'>
         <h1>Get Things Done!</h1>
         <TodoForm addTodo={addTodo} />
-        {todos.map((todo, index) => (
-            todo.isEditing ? (
-                <EditTodoForm editTodo={editTask} task={todo} />
+        {todos.map((item, index) => (
+            item.isEditing ? (
+                <EditTodoForm editTodo={editTask} Task={item} />
             ) : (
-                <Todo task={todo} key={index}  deleteTodo={deleteTodo} editTodo={editTodo} />
+                <Todo Task={item} key={index}  deleteTodo={deleteTodo} editTodo={editTodo} />
             )
             
         ))}
