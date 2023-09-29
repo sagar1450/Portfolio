@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import EditTask from '../modals/EditTask'
 
 const Card = ({taskObj, index, deleteTask, updateListArray}) => {
+         console.log(taskObj);
     const [modal, setModal] = useState(false);
 
     const colors = [
@@ -43,7 +44,7 @@ const Card = ({taskObj, index, deleteTask, updateListArray}) => {
         <div class = "card-wrapper">
             <div class = "card-top" style={{"background-color": colors[index%5].primaryColor}}></div>
             <div class = "task-holder">
-                <span class = "card-header" style={{"background-color": colors[index%5].secondaryColor, "border-radius": "10px"}}>{taskObj.Name}</span>
+                <span class = "card-header" style={{"background-color": colors[index%5].secondaryColor, "border-radius": "10px"}}>{  taskObj["Name"]}</span>
                 <p className = "description">{taskObj.Description}</p>
 
                 <div style={{"position": "absolute", "right" : "20px", "bottom" : "20px"}}>

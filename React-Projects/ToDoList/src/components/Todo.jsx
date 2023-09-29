@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 export const Todo = ({ Task,deleteTodo,editTodo }) => {   
-
+console.log(Task);
     return (
         <div className="Todo">
             <p>{Task.task}</p>

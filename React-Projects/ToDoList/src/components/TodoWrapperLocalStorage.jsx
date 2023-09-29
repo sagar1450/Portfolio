@@ -22,6 +22,7 @@ export const TodoWrapperLocalStorage = () => {
 
     const deleteTodo = id => {
         const newTodos = todos.filter(todo => todo.id !== id);
+        
         setTodos(newTodos);
         localStorage.setItem('todos', JSON.stringify(newTodos));
     }

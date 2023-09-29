@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import CreateTask from '../modals/CreateTask'
+import { v4 as uuidv4 } from 'uuid';
 import Card from './Card';
+uuidv4();
 
 const TodoList = () => {
     const [modal, setModal] = useState(false);
@@ -19,8 +21,8 @@ const TodoList = () => {
     const deleteTask = (index) => {
         let tempList = taskList
         tempList.splice(index, 1)
-        localStorage.setItem("taskList", JSON.stringify(tempList))
         setTaskList(tempList)
+        localStorage.setItem("taskList", JSON.stringify(tempList))
         window.location.reload()
     }
 
@@ -40,9 +42,11 @@ const TodoList = () => {
         let tempList = taskList
         tempList.push(taskObj)
         localStorage.setItem("taskList", JSON.stringify(tempList))
-        setTaskList(taskList)
+        setTaskList(tempList)
         setModal(false)
     }
+
+
 
 
     return (
