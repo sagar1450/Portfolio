@@ -37,15 +37,17 @@ export const TodoWrapperLocalStorage = () => {
         setTodos(newTodos);
         localStorage.setItem('todos', JSON.stringify(newTodos));
     }
+    
   return (
     <div className='TodoWrapper'>
         <h1>Get Things Done!</h1>
         <TodoForm addTodo={addTodo} />
+        
         {todos.map((item, index) => (
             item.isEditing ? (
                 <EditTodoForm editTodo={editTask} Task={item} />
             ) : (
-                <Todo Task={item} key={index}  deleteTodo={deleteTodo} editTodo={editTodo} />
+                <Todo Task={item} key={index} index={index}  deleteTodo={deleteTodo} editTodo={editTodo} />
             )
             
         ))}
