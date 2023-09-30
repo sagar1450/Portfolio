@@ -151,6 +151,10 @@ function GetDailyInfo() {
                     document.getElementById("img" + (i + 1)).src = "images/animated/rainy-2.svg"
 
                 }
+                if (data.list[i].weather[0].description === "moderate rain") {
+                    document.getElementById("img" + (i + 1)).src = "images/animated/rainy-2.svg"
+
+                }
 
             }
 
