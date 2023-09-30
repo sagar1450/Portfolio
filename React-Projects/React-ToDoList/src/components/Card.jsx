@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import EditTask from '../modals/EditTask'
 
 const Card = ({taskObj, index, deleteTask, updateListArray}) => {
-         console.log(taskObj);
+        
     const [modal, setModal] = useState(false);
 
     const colors = [
